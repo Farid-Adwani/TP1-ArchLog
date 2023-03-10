@@ -1,4 +1,4 @@
-package com.directi.training.srp.exercise;
+package com.directi.training.srp.exercice;
 
 public class Car
 {

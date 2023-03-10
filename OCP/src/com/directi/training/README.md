@@ -1,4 +1,4 @@
-# Open Closed Principle (OCP) Exercise
+# Open Closed Principle (OCP) exercice
 
 ## Before
 The `ResourceAllocator` class has a method `allocate()` which allocates either a time slot or a space slot. The `ResourceAllocator` class violates the Open Closed Principle because it must be modified to add any new types of resources.
@@ -12,4 +12,4 @@ By passing an instance of `Resource` instead of `ResourceType`, we've eliminated
 
 ## Diagram
 
-![UML DIAGRAM](./ocp/exercise_refactored/exercise_refactored.png)
+![UML DIAGRAM](./ocp/exercice_refactored/exercice_refactored.png)

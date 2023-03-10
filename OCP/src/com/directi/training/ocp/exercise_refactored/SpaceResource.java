@@ -1,4 +1,4 @@
-package com.directi.training.ocp.exercise_refactored;
+package com.directi.training.ocp.exercice_refactored;
 
 public class SpaceResource implements Resource
 {

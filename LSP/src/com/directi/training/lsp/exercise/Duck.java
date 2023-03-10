@@ -1,4 +1,4 @@
-package com.directi.training.lsp.exercise;
+package com.directi.training.lsp.exercice;
 
 public class Duck
 {

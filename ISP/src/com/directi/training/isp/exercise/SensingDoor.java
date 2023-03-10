@@ -1,4 +1,4 @@
-package com.directi.training.isp.exercise;
+package com.directi.training.isp.exercice;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 

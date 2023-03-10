@@ -1,4 +1,4 @@
-package com.directi.training.dip.exercise;
+package com.directi.training.dip.exercice;
 
 import java.io.IOException;
 

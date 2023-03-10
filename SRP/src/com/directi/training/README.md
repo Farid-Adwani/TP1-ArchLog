@@ -1,13 +1,13 @@
-# Car Manager Exercise
+# Car Manager exercice
 
-## Exercise Before Modification
+## exercice Before Modification
 The original code consists of two classes: Car and CarManager. The Car class defines a car object with three fields: id, model, and brand. The CarManager class is responsible for managing a list of cars, and it includes three methods: getFromDb, getCarsNames, and getBestCar.
 
 `getFromDb` method searches the car list for a given car ID and returns the car object. `getCarsNames` method returns a string that concatenates the brand and model of each car in the car list. Finally, `getBestCar` method returns the car object with the highest model value.
 
 However, this implementation violates the Single Responsibility Principle (SRP) because the CarManager class has multiple responsibilities: managing the car list, searching for a specific car, formatting car names, and rating the best car. Thus, the CarManager class needs to be refactored.
 
-## Exercise After Modification
+## exercice After Modification
 To adhere to the SRP, the original CarManager class has been refactored into four classes: Car, CarRepo, CarFormatter, and CarRater.
 
 `Car` class remains the same and defines the car object.
@@ -24,4 +24,4 @@ By following the SRP, the code has become more modular, easier to maintain, and 
 
 ## Diagram
 
-![UML DIAGRAM](./srp/exercise_refactored/exercise_refactored.png)
+![UML DIAGRAM](./srp/exercice_refactored/exercice_refactored.png)
