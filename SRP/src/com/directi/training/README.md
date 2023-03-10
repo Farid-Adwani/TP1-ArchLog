@@ -24,4 +24,4 @@ By following the SRP, the code has become more modular, easier to maintain, and 
 
 ## Diagram
 
-![UML DIAGRAM](./exercise_refactored/exercise_refactored.png)
+![UML DIAGRAM](./srp/exercise_refactored/exercise_refactored.png)
