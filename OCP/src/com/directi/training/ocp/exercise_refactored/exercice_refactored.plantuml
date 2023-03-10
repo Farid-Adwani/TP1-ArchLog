@@ -1,0 +1,30 @@
+@startuml exercice_refactored
+
+interface Resource {
+    +findFree(): int
+    +markBusy(resourceId: int): void
+    +markFree(resourceId: int): void
+}
+
+class SpaceResource {
+    +findFree(): int
+    +markBusy(resourceId: int): void
+    +markFree(resourceId: int): void
+}
+
+class TimeResource {
+    +findFree(): int
+    +markBusy(resourceId: int): void
+    +markFree(resourceId: int): void
+}
+
+class ResourceAllocator {
+    +allocate(resource: Resource): int
+    +free(resource: Resource, resourceId: int): void
+}
+
+Resource <|-- SpaceResource
+Resource <|-- TimeResource
+ResourceAllocator -> Resource
+
+@enduml
