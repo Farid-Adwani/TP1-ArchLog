@@ -1,4 +1,4 @@
-@startuml exercice_refactored
+@startuml exercise_refactored
 class Car {
     -id: String
     -model: String
