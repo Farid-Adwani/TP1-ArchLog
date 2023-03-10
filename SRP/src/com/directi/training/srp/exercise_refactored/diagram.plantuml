@@ -1,0 +1,43 @@
+@startuml exercice_refactored
+class Car {
+    -id: String
+    -model: String
+    -brand: String
+    +Car(id: String, model: String, brand: String)
+    +getId(): String
+    +getModel(): String
+    +getBrand(): String
+}
+
+class CarFormatter {
+    +getCarsNames(cars: List<Car>): String
+}
+
+class CarRater {
+    +getBestCar(cars: List<Car>): Car
+}
+
+class CarRepo {
+    -carsDb: List<Car>
+    +findById(carId: String): Car
+    +findAll(): List<Car>
+}
+
+class CarManager {
+    -CarRepo: CarRepo
+    -carFormatter: CarFormatter
+    -carRater: CarRater
+    +CarManager(CarRepo: CarRepo, carFormatter: CarFormatter, carRater: CarRater)
+    +getCarById(carId: String): Car
+    +getCarsNames(): String
+    +getBestCar(): Car
+}
+
+CarRepo *-- Car
+CarManager -> CarRepo 
+CarManager -> CarFormatter 
+CarManager -> CarRater
+
+CarFormatter -> Car
+CarRater -> Car
+@enduml
