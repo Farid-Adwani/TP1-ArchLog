@@ -1,0 +1,56 @@
+@startuml exercice_refactored
+
+interface Door {
+    + lock()
+    + unlock()
+    + open()
+    + close()
+}
+
+interface SensorClient {
+    + proximityCallback()
+}
+
+interface TimerClient {
+    + timeOutCallback()
+}
+
+class SensingDoor {
+    - _locked: boolean
+    - _opened: boolean
+    + SensingDoor(sensor: Sensor)
+    + lock()
+    + unlock()
+    + open()
+    + close()
+    + proximityCallback()
+}
+
+class Sensor {
+    + register(sensorClient: SensorClient)
+    - isPersonClose(): boolean
+}
+
+class TimedDoor {
+    - _locked: boolean
+    - _opened: boolean
+    + TimedDoor(timer: Timer)
+    + lock()
+    + unlock()
+    + open()
+    + close()
+    + timeOutCallback()
+}
+
+class Timer {
+    + register(timeOut: long, timerClient: TimerClient)
+}
+
+Door <|.. SensingDoor
+SensorClient <|.. SensingDoor
+Sensor --* SensorClient
+Door <|.. TimedDoor
+TimerClient <|.. TimedDoor
+Timer --* TimerClient
+
+@enduml

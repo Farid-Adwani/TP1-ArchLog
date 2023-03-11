@@ -1,0 +1,39 @@
+@startuml exercice_refactored
+interface IDuck {
+    {abstract} void quack() throws IDuckException
+    {abstract} void swim() throws IDuckException
+}
+
+class Duck {
+    {abstract} void quack()
+    {abstract} void swim()
+}
+
+class ElectronicDuck {
+    - boolean _on = false
+    {abstract} void quack() throws DuckIsOffException
+    {abstract} void swim() throws DuckIsOffException
+    + void turnOn()
+    + void turnOff()
+}
+
+class Pool {
+    + void run()
+    - void quack(IDuck... ducks)
+    - void swim(IDuck... ducks)
+}
+
+class IDuckException {
+    + {abstract} void IDuckException(String message)
+}
+
+class DuckIsOffException {
+    + DuckIsOffException(String message)
+}
+
+IDuck -> IDuckException
+IDuck -> DuckIsOffException
+IDuck <|-- Duck
+IDuck <|-- ElectronicDuck
+Pool -> IDuck
+@enduml

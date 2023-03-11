@@ -1,4 +1,4 @@
-package com.directi.training.srp.exercise_refactored;
+package com.directi.training.srp.exercice_refactored;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +22,7 @@ public class CarRepo
 
     public List<Car> findAll()
     {
-        return _carsDb;
+        return new ArrayList<>(_carsDb);
     }
 
 }

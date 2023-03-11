@@ -1,0 +1,44 @@
+@startuml exercice_refactored
+interface IReader {
+    + read(): string
+}
+
+interface IWriter {
+    + write(data: string): void
+}
+
+class MyFileReader {
+    + read(): string
+}
+
+class MyFileWriter {
+    + write(data: string): void
+}
+
+class MyNetworkReader {
+    + read(): string
+}
+
+class MyDatabase {
+    + save(data: string): void
+}
+
+class EncodingModule {
+    - reader: IReader
+    - writer: IWriter
+    + encode(): void
+}
+
+class MyDatabaseWriter {
+    - database: MyDatabase
+    + write(data: string): void
+}
+
+IReader <|.. MyFileReader
+IReader <|.. MyNetworkReader
+IWriter <|.. MyFileWriter
+IWriter <|.. MyDatabaseWriter
+EncodingModule -> IReader
+EncodingModule -> IWriter
+MyDatabaseWriter <-- MyDatabase
+@enduml
